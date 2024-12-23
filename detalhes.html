@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Livro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Detalhes do Livro</h1>
+    <button class="nav-toggle">☰ Abrir Menu</button>
+    <nav class="nav-menu">
+        <button class="nav-close">✖ Fechar Menu</button>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="detalhes.html?id=1">Livro 1</a></li>
+            <li><a href="detalhes.html?id=2">Livro 2</a></li>
+            <li><a href="detalhes.html?id=3">Livro 3</a></li>
+            <li><a href="cadastro.html">Cadastrar Novo Livro</a></li>
+        </ul>
+    </nav>
+    <p>ID do Livro: <span id="bookId"></span></p>
+    <p>Título: <span id="bookTitle"></span></p>
+    <p>Autor: <span id="bookAuthor"></span></p>
+    <a href="index.html">Voltar à Página Inicial</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+        document.getElementById('bookId').textContent = bookId;
+        // Aqui você pode adicionar lógica para buscar os detalhes do livro com base no ID
+        document.getElementById('bookTitle').textContent = 'Título Exemplo';
+        document.getElementById('bookAuthor').textContent = 'Autor Exemplo';
+    </script>
+</body>
+</html>
