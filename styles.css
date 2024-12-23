@@ -5,7 +5,7 @@
     --font-size: 16px;
     --padding: 10px;
     --margin: 10px;
-    --border: 1px solid #ccc;
+    --border: 2px solid #ccc;
 }
 
 body {
@@ -15,26 +15,41 @@ body {
     margin: var(--margin);
 }
 
-h1, h2, h3, p, a, ul, li, form, input, button {
-    margin: var(--margin);
+header, nav, footer, main {
     padding: var(--padding);
+    margin: var(--margin);
     border: var(--border);
 }
 
-a {
+header h1, footer p {
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: var(--margin);
+}
+
+nav ul li a {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-a:hover {
+nav ul li a:hover {
     color: var(--secondary-color);
 }
 
 button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
     padding: var(--padding);
+    margin: var(--margin);
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
     cursor: pointer;
 }
 
@@ -42,28 +57,30 @@ button:hover {
     background-color: var(--secondary-color);
 }
 
-.nav-menu {
+/* Elementos extras: Menu de navegação */
+.menu-toggle {
     display: none;
 }
 
-.nav-menu.open {
-    display: block;
+nav ul {
+    display: flex;
+    flex-direction: row;
 }
 
-.nav-toggle {
-    display: block;
-    cursor: pointer;
-}
-
-.nav-close {
-    display: none;
-    cursor: pointer;
-}
-
-.nav-menu.open + .nav-close {
-    display: block;
-}
-
-.nav-menu.open + .nav-close + .nav-toggle {
-    display: none;
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: var(--padding);
+        cursor: pointer;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+    nav ul.show {
+        display: flex;
+    }
 }
