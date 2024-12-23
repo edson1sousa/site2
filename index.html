@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bem-vindo à Biblioteca</h1>
-    <button class="nav-toggle">☰ Abrir Menu</button>
-    <nav class="nav-menu">
-        <button class="nav-close">✖ Fechar Menu</button>
+    <header>
+        <h1>Meu Site</h1>
+        <img src="logo.png" alt="Logo do Site">
+    </header>
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul>
             <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="detalhes.html?id=1">Livro 1</a></li>
-            <li><a href="detalhes.html?id=2">Livro 2</a></li>
-            <li><a href="detalhes.html?id=3">Livro 3</a></li>
-            <li><a href="cadastro.html">Cadastrar Novo Livro</a></li>
+            <li><a href="detalhes.html">Página de Detalhes</a></li>
+            <li><a href="sobre.html">Sobre o Autor</a></li>
+            <li><a href="login.html">Admin</a></li>
         </ul>
     </nav>
-    <ul>
-        <li><a href="detalhes.html?id=1">Livro 1</a></li>
-        <li><a href="detalhes.html?id=2">Livro 2</a></li>
-        <li><a href="detalhes.html?id=3">Livro 3</a></li>
-    </ul>
-    <a href="cadastro.html">Cadastrar Novo Livro</a>
+    <main>
+        <h2>Objetos Tema</h2>
+        <div class="objeto-tema">
+            <h3>Título do Objeto 1</h3>
+            <img src="imagem1.jpg" alt="Imagem do Objeto 1">
+        </div>
+        <div class="objeto-tema">
+            <h3>Título do Objeto 2</h3>
+            <img src="imagem2.jpg" alt="Imagem do Objeto 2">
+        </div>
+        <!-- Adicione mais objetos tema conforme necessário -->
+    </main>
+    <footer>
+        <p>Autor: Nome do Autor</p>
+        <a href="sobre.html">Sobre o Autor</a>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
